@@ -12,7 +12,7 @@ const cheerio = require('cheerio')
 const url ='https://www.embrapa.br/busca-de-noticias/-/noticia/todos?'
 
 
-async function getNoticias(){
+async function getNoticiasEmbrapa(){
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
 
@@ -28,4 +28,4 @@ async function getNoticias(){
     console.log(list);
 }
 
-getNoticias();
+getNoticiasEmbrapa();

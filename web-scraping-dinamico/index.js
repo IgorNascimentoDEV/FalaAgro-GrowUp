@@ -5,7 +5,7 @@ const url = "https://www.embrapa.br/busca-de-noticias/-/noticia/todos?";
 let c = 1;
 
 ( async () => {
-    const browser = await pup.launch({headless: true});
+    const browser = await pup.launch({headless: false});
     const page = await browser.newPage();
     console.log('Inicie!');
 
