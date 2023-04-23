@@ -1,5 +1,6 @@
 const pup = require('puppeteer');
 const mongoose = require('mongoose');
+
 const noticia = mongoose.model(
     'noticia',
     mongoose.Schema({
@@ -56,8 +57,8 @@ let c = 1;
         const textoNoticia = await page.$$eval('.texto-noticia > p', par => par.map(p => p.innerText));
 
         const obj = {titulo, dataNoticia, textoNoticia, autorNoticia};
-        //console.log(obj)
-        salvandoNoticia(obj)
+        console.log(obj)
+        //salvandoNoticia(obj)
         c++;
     }
 
