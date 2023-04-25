@@ -18,7 +18,10 @@ app.use('/noticia', rotasNoticia)
 
 
 //configurando porta e conexão com o banco de dados
-mongoose.connect("mongodb://localhost:27017/Noticia", {
+
+//mongodb+srv://igor:8kLkRS49PZ6ycfiv@cluster0.otazhn5.mongodb.net/?retryWrites=true&w=majority
+//mongodb://localhost:27017/Noticia
+mongoose.connect("mongodb+srv://igor:8kLkRS49PZ6ycfiv@cluster0.otazhn5.mongodb.net/?retryWrites=true&w=majority", {
       useNewUrlParser: true,
 
       useUnifiedTopology: true,
