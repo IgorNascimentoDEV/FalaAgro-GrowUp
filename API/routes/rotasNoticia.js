@@ -5,15 +5,15 @@ const Noticia = require('../model/Noticia')
 //rotas / endpoint 
 
 //LEITURA
-router.get("/noticia", async(req, res)=>{
-    try {
-      const noticias = Noticia.find();
-      res.status(200).json(noticias);
-
-    } catch (error) {
-      res.status(500).json({error: error})
-    }
+router.get("/", async (req, res) => {
+  try {
+    const noticias = await Noticia.find();
+    res.status(200).json(noticias);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
 });
+
 
 //LEITURA POR ID
 router.get('/:id', async(req, res) => {
@@ -38,7 +38,8 @@ router.get('/:id', async(req, res) => {
 })
 
 //CRIANDO DADOS
-router.post('/noticia', async(req, res) =>{
+
+router.post('/', async(req, res) =>{
 
   const {title, dataNoticia, textoNoticia, autorNoticia} = req.body
 
@@ -94,6 +95,8 @@ router.put('/:id', async(req, res) => {
 //DELETE
 router.delete('/:id', async (req, res) => {
   const id = req.params.id
+
+  const noticia = await Noticia.findOne({_id: id})
 
   if(!noticia){
     res.status(422).json({error: "A noticia nao foi encontrada"})

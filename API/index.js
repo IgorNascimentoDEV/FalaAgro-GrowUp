@@ -21,7 +21,7 @@ app.use('/noticia', rotasNoticia)
 
 //mongodb+srv://igor:8kLkRS49PZ6ycfiv@cluster0.otazhn5.mongodb.net/?retryWrites=true&w=majority
 //mongodb://localhost:27017/Noticia
-mongoose.connect("mongodb+srv://igor:8kLkRS49PZ6ycfiv@cluster0.otazhn5.mongodb.net/?retryWrites=true&w=majority", {
+mongoose.connect("mongodb://localhost:27017/noticias", {
       useNewUrlParser: true,
 
       useUnifiedTopology: true,

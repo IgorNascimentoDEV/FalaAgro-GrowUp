@@ -12,7 +12,7 @@ const noticia = mongoose.model(
 );
 const url = "https://www.embrapa.br/busca-de-noticias/-/noticia/todos?";
 
-mongoose.connect('mongodb://localhost:27017/Noticia', {
+mongoose.connect('mongodb://localhost:27017/noticias', {
     useNewUrlParser: true, 
 
     useUnifiedTopology: true 
@@ -57,8 +57,8 @@ let c = 1;
         const textoNoticia = await page.$$eval('.texto-noticia > p', par => par.map(p => p.innerText));
 
         const obj = {titulo, dataNoticia, textoNoticia, autorNoticia};
-        console.log(obj)
-        //salvandoNoticia(obj)
+        //console.log(obj)
+        salvandoNoticia(obj)
         c++;
     }
 
